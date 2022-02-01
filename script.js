@@ -25,8 +25,14 @@ function getFullPrice() {
     return screenPrice + allServicePrices;
 }
 
-const getTitle = function () {
-    return (title.charAt(0).toUpperCase() + title.substring(1).toLowerCase()).trim();
+const getTitle = function (str) {
+    for (let i = 0; i < str.length;) {
+        if (str[i] == " ") {
+            i++;
+        } else {
+            return str[i].toUpperCase() + str.slice(i + 1).toLowerCase();
+        }
+    }
 };
 
 const getServicePercentPrices = function () {
@@ -61,4 +67,4 @@ console.log(screens.toLowerCase().split(", "));
 console.log(fullPrice * (rollback / 100));
 console.log(servicePercentPrice);
 console.log(screens.split());
-console.log(getTitle());  
+console.log(getTitle(title));  
