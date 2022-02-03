@@ -12,7 +12,7 @@ let title,
     service2;
 
 const isNumber = function (num) {
-    return !isNaN(parseFloat(num)) && isFinite(num);
+    return !isNaN(parseFloat(num)) && isFinite(num) || null;
 };
 
 const asking = function () {
@@ -23,6 +23,7 @@ const asking = function () {
         screenPrice = prompt('Сколько будет стоить данная работа?', '12000');
     } while (!isNumber(screenPrice));
     screenPrice = parseInt(screenPrice);
+    console.log(screenPrice);
     adaptive = confirm('Нужен ли адаптив на сайте?');
 };
 
