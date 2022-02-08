@@ -1,5 +1,26 @@
 "use strict";
-
+const heading = document.getElementsByTagName('h1')[0],
+    handlerBtn = document.getElementsByClassName("handler_btn"),
+    screenBtn = document.querySelector('.screen-btn'),
+    otheritemsPercent = document.querySelectorAll(".other-items.percent"),
+    otheritemsNumber = document.querySelectorAll(".other-items.number"),
+    inputRollback = document.querySelector('.rollback').querySelector('input'),
+    spanRollback = document.querySelector('.rollback').querySelector('span'),
+    inputTotal = document.getElementsByClassName('total-input'),
+    total1 = inputTotal[0],
+    total2 = inputTotal[1],
+    total3 = inputTotal[2],
+    total4 = inputTotal[3],
+    total5 = inputTotal[4];
+let blocksScreen = document.querySelectorAll('.screen');
+console.log(total1);
+console.log(total2);
+console.log(total3);
+console.log(total4);
+console.log(total5);
+blocksScreen.forEach(function (item) {
+    console.log(item);
+});
 const appData = {
     title: '',
     screens: [],
@@ -46,6 +67,7 @@ const appData = {
             } while (!appData.isNumber(price));
 
             appData.services[i + ' ' + name] = +price;
+
         }
 
         appData.adaptive = confirm('Нужен ли адаптив на сайте?');
@@ -54,6 +76,7 @@ const appData = {
         for (let screen of appData.screens) {
             appData.screenPrice += +screen.price;
         }
+
 
         for (let key in appData.services) {
             appData.allServicePrices += appData.services[key];
@@ -86,7 +109,7 @@ const appData = {
         console.log(appData.fullPrice);
         console.log(appData.servicePercentPrice);
         console.log(appData.screens);
-        console.log(appData.services);
+        console.log(appData.screenPrice);
     },
     start: function () {
         appData.asking();
@@ -99,4 +122,8 @@ const appData = {
 
 };
 appData.start();
+const result = appData.screens.reduce(function (sum, item) {
+    return sum + item.price;
+}, 0);
+console.log(result);
 
