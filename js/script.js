@@ -1,26 +1,26 @@
 "use strict";
 const heading = document.getElementsByTagName('h1')[0],
-    handlerBtn = document.getElementsByClassName("handler_btn"),
+    calculator = document.getElementsByClassName("handler_btn")[0],
+    reset = document.getElementsByClassName("handler_btn")[1],
     screenBtn = document.querySelector('.screen-btn'),
     otheritemsPercent = document.querySelectorAll(".other-items.percent"),
     otheritemsNumber = document.querySelectorAll(".other-items.number"),
     inputRollback = document.querySelector('.rollback').querySelector('input'),
     spanRollback = document.querySelector('.rollback').querySelector('span'),
-    inputTotal = document.getElementsByClassName('total-input'),
-    total1 = inputTotal[0],
-    total2 = inputTotal[1],
-    total3 = inputTotal[2],
-    total4 = inputTotal[3],
-    total5 = inputTotal[4];
+    costLayout = document.getElementsByClassName('total-input')[0],
+    numberScreens = document.getElementsByClassName('total-input')[1],
+    costAdditionalServices = document.getElementsByClassName('total-input')[2],
+    totalCost = document.getElementsByClassName('total-input')[3],
+    costRollback = document.getElementsByClassName('total-input')[4];
 let blocksScreen = document.querySelectorAll('.screen');
-console.log(total1);
-console.log(total2);
-console.log(total3);
-console.log(total4);
-console.log(total5);
-blocksScreen.forEach(function (item) {
-    console.log(item);
-});
+console.log(calculator);
+console.log(reset);
+console.log(costLayout);
+console.log(numberScreens);
+console.log(costAdditionalServices);
+console.log(totalCost);
+console.log(costRollback);
+
 const appData = {
     title: '',
     screens: [],
